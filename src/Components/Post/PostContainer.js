@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import useInput from "../../Hooks/useInput";
 import PostPresenter from "./PostPresenter";
-import { ADD_COMMENT, TOGGLE_LIKE } from "./PostQueries";
+import { ADD_COMMENT, TOGGLE_LIKE,  FEED_QUERY} from "./PostQueries";
 import { useMutation } from "@apollo/client";
 import { toast } from "react-toastify";
 
@@ -23,10 +23,14 @@ const PostContainer = ({
     const [selfComments, setSelfComments] = useState([])
     const comment = useInput("");
     const [toggleLikeMutation]= useMutation(TOGGLE_LIKE, {
-        variables: {postId: id}
+      variables: { postId: id },
+      refetchQueries: [{ query: FEED_QUERY }],
+      awaitRefetchQueries: true
     })
     const [addCommentMutation] = useMutation(ADD_COMMENT, {
-        variables: { postId: id, text: comment.value}
+      variables: { postId: id, text: comment.value },
+      refetchQueries: [{ query: FEED_QUERY }],
+      awaitRefetchQueries: true
     })
     
     const slide = () => {

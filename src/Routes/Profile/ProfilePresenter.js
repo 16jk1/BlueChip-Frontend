@@ -99,7 +99,7 @@ export default ({ loading, data, logOut }) => {
               {isSelf ? (
                 <Button onClick={logOut} text="Log Out" />
               ) : (
-                <FollowButton isFollowing={isFollowing} id={id} />
+                <FollowButton isFollowing={isFollowing} id={id} username={username}/>
               )}
             </UsernameRow>
             <Counts>
