@@ -4,7 +4,7 @@ import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/client";
 import Loader from "../Components/Loader";
 import UserCard from "../Components/UserCard";
-import PostCard from "../Components/SquarePost";
+import SquarePost from "../Components/SquarePost";
 
 const ALL_USER_POST = gql`
   query allUserPost {
@@ -79,7 +79,7 @@ export default () => {
           data &&
           data.allPost &&
           data.allPost.map(post => (
-            <PostCard
+            <SquarePost
               key={post.id}
               id={post.id}
               likeCount={post.likeCount}
