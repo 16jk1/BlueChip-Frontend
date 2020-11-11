@@ -1,29 +1,77 @@
+import React from "react";
+import { Helmet } from "rl-react-helmet";
+import styled from "styled-components";
 import { gql } from "apollo-boost";
+import { useQuery } from "@apollo/client";
+import Loader from "../Components/Loader";
+import Post from "../Components/Post"
+import Theme from "../Styles/Theme";
 
-export const CREATE_POST = gql`
-  mutation createAccount(
-    $username: String!
-    $email: String!
-    $firstName: String
-    $lastName: String
-  ) {
-    createAccount(
-      username: $username
-      email: $email
-      firstName: $firstName
-      lastName: $lastName
-    )
+const FEED_QUERY = gql`
+  {
+    seeFeed {
+      id
+      location
+      caption
+      user {
+        id
+        avatar
+        username
+      }
+      files {
+        id
+        url
+      }
+      likeCount
+      isLiked
+      comments {
+        id
+        text
+        user {
+          id
+          username
+        }
+      }
+      createdAt
+    }
   }
 `;
 
-export const CONFIRM_SECRET = gql`
-  mutation confirmSecret($secret: String!, $email: String!) {
-    confirmSecret(secret: $secret, email: $email)
-  }
+const Wrapper = styled.div`
+  min-height: 90vh;
+  ${Theme.router};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
 `;
 
-export const LOCAL_LOG_IN = gql`
-  mutation logUserIn($token: String!) {
-    logUserIn(token: $token) @client
-  }
-`;
+
+export default () => {
+    const { data, loading } = useQuery(FEED_QUERY);
+    return (
+        <Wrapper>
+            <Helmet>
+                <title>Feed | BlueChip</title>
+            </Helmet>
+            {loading && <Loader />}
+            {!loading &&
+                data &&
+                data.seeFeed &&
+                data.seeFeed.map(post => (
+                    <Post
+                        key={post.id}
+                        id={post.id}
+                        location={post.location}
+                        caption={post.caption}
+                        user={post.user}
+                        files={post.files}
+                        likeCount={post.likeCount}
+                        isLiked={post.isLiked}
+                        comments={post.comments}
+                        createdAt={post.createdAt}
+                    />
+                ))}
+        </Wrapper>
+    );
+};
