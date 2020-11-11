@@ -46,11 +46,12 @@ const Wrapper = styled.div`
   min-height: 80vh;
 `;
 
-const textWelcome = styled.h1`
+
+const HeaderColumn = styled.div`
+  margin-top: -100px;
   color: #999;
-  font-size: 200px;
-  text-align: center;
-  margin-top: 50px;
+  font-size: 40px;
+  margin-bottom: 50px;
 `;
 
 export default () => {
@@ -60,9 +61,9 @@ export default () => {
             <Helmet>
                 <title>Feed | BlueChip</title>
             </Helmet>
-            <textWelcome>
-              Welcome to BlueChip!
-            </textWelcome>
+            <HeaderColumn>
+              <h1/>Welcome to BlueChip!
+            </HeaderColumn>
             {loading && <Loader />}
             {!loading &&
                 data &&

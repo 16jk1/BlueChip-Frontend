@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { Logo } from "./Icons";
+import mainLogo from "../assets/image/BlueChip_Logo.png";
 
 const Animation = keyframes`
     0%{
@@ -20,8 +21,16 @@ const Loader = styled.div`
   text-align: center;
 `;
 
+const MainLogo = styled.img`
+
+  width: 36px;
+  height: 36px;
+
+`;
+
+
 export default () => (
   <Loader>
-    <Logo size={36} />
+    <MainLogo src={mainLogo}></MainLogo>
   </Loader>
 );

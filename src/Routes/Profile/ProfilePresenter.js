@@ -7,9 +7,18 @@ import FatText from "../../Components/FatText";
 import FollowButton from "../../Components/FollowButton";
 import SquarePost from "../../Components/SquarePost";
 import Button from "../../Components/Button";
+import Theme from "../../Styles/Theme";
 
 const Wrapper = styled.div`
-  min-height: 100vh;
+  min-height: 90vh;
+  ${Theme.router};
+  width: 975px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 975px) {
+    width: 100vw;
+  }
 `;
 
 const Header = styled.header`
