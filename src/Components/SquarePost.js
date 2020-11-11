@@ -17,8 +17,11 @@ const Overlay = styled.div`
     fill: white;
   }
 `;
+const ELink = styled(Link)`
+  color: inherit;
+`;
 
-const Container = styled(Link)`
+const Container = styled.div`
   background-image: url(${props => props.bg});
   background-size: cover;
   cursor: pointer;
@@ -44,7 +47,8 @@ const NumberText = styled.span`
 `;
 
 const SquarePost = ({ likeCount, commentCount, file }) => (
-  <Container to={`/`}>
+  <ELink to={`/`}>
+  <Container bg={file.url}>
     <Overlay>
       <Number>
         <HeartFull />
@@ -56,6 +60,7 @@ const SquarePost = ({ likeCount, commentCount, file }) => (
       </Number>
     </Overlay>
   </Container>
+  </ELink>
 );
 
 SquarePost.propTypes = {
