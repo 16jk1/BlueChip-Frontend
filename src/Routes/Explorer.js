@@ -8,7 +8,7 @@ import Theme from "../Styles/Theme";
 
 const FEED_QUERY = gql`
   {
-    seeFeed {
+    allPost {
       id
       location
       caption
@@ -70,9 +70,9 @@ export default () => {
           {loading && <Loader />}
           {!loading && 
             data &&
-            data.seeFeed && (
+            data.allPost && (
             <Section>
-              {data.seeFeed.map(post => (
+              {data.allPost.map(post => (
                 <PostCard
                 key={post.id}
                 likeCount={post.likeCount}

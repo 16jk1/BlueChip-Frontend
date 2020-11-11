@@ -35,11 +35,13 @@ const HeaderColumn = styled.div``;
 const UsernameRow = styled.div`
   display: flex;
   align-items: center;
+
 `;
 
 const Username = styled.span`
   font-size: 26px;
   display: block;
+  margin-right: 15px;
 `;
 
 const Counts = styled.ul`
