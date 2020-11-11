@@ -48,7 +48,7 @@ const NumberText = styled.span`
 const SquarePost = ({ likeCount, commentCount, file }) => (
   
   <Container bg={file.url}>
-    <ELink to={`/`}>
+    <ELink to={`/explorerpost`}>
     <Overlay>
       <Number>
         <HeartFull />
