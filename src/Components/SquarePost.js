@@ -18,7 +18,6 @@ const Overlay = styled.div`
   }
 `;
 const ELink = styled(Link)`
-  color: inherit;
 `;
 
 const Container = styled.div`
