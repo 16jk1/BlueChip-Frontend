@@ -6,6 +6,8 @@ import useInput from "../Hooks/useInput";
 import { Compass, HeartEmpty, User, Logo } from "./Icons";
 import { useQuery } from "@apollo/client";
 import { ME } from "../SharedQueries";
+import mainLogo from "../assets/image/BlueChip_Logo.png";
+import mainText from "../assets/image/BlueChip_text.png";
 
 const Header = styled.header`
   width: 100%;
@@ -63,7 +65,19 @@ const HeaderLink = styled(Link)`
   }
 `;
 
+const MainLogo = styled.img`
 
+  width: 25px;
+  height: 25px;
+
+`;
+
+const MainText = styled.img`
+  width: 100px;
+  height: 75px;
+  margin-bottom: -50px;
+  margin-left: -10px;
+`;
 
 export default withRouter(({ history }) => {
     const search = useInput("");
@@ -77,7 +91,7 @@ export default withRouter(({ history }) => {
       <HeaderWrapper>
         <HeaderColumn>
           <Link to="/">
-            <Logo />
+            <MainText src={mainText}></MainText>
           </Link>
         </HeaderColumn>
         <HeaderColumn>
@@ -91,7 +105,7 @@ export default withRouter(({ history }) => {
         </HeaderColumn>
         <HeaderColumn>
           <HeaderLink to="/explore">
-            <Compass />
+            <MainLogo src={mainLogo}></MainLogo>
           </HeaderLink>
           <HeaderLink to="/notifications">
             <HeartEmpty />

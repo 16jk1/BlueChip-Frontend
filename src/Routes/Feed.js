@@ -6,6 +6,7 @@ import { useQuery } from "@apollo/client";
 import Loader from "../Components/Loader";
 import Post from "../Components/Post"
 import Theme from "../Styles/Theme";
+
 const FEED_QUERY = gql`
   {
     seeFeed {
@@ -45,6 +46,13 @@ const Wrapper = styled.div`
   min-height: 80vh;
 `;
 
+const textWelcome = styled.h1`
+  color: #999;
+  font-size: 200px;
+  text-align: center;
+  margin-top: 50px;
+`;
+
 export default () => {
     const { data, loading } = useQuery(FEED_QUERY);
     return (
@@ -52,6 +60,9 @@ export default () => {
             <Helmet>
                 <title>Feed | BlueChip</title>
             </Helmet>
+            <textWelcome>
+              Welcome to BlueChip!
+            </textWelcome>
             {loading && <Loader />}
             {!loading &&
                 data &&
