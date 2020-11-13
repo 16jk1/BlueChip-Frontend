@@ -67,8 +67,8 @@ export default ({
         <Helmet>
           <title>Log In | BlueChip</title>
         </Helmet>
+        <MainText src={mainText}></MainText>
         <form onSubmit={onSubmit}>
-          <MainText src={mainText}></MainText>
           <Input placeholder={"Email"} {...email} type="email" />
           <Button text={"Log in"} />
         </form>
@@ -79,7 +79,7 @@ export default ({
        <Helmet>
          <title>Sign Up | BlueChip</title>
        </Helmet>
-
+       <MainText src={mainText}></MainText>
        <form onSubmit={onSubmit}>
          <Input placeholder={"First name"} {...firstName} />
          <Input placeholder={"Last name"} {...lastName} />
@@ -94,6 +94,7 @@ export default ({
         <Helmet>
           <title>Confirm Secret | BlueChip</title>
         </Helmet>
+        <MainText src={mainText}></MainText>
         <form onSubmit={onSubmit}>
           <Input placeholder="Paste your secret" required {...secret} />
           <Button text={"Confirm"} />
