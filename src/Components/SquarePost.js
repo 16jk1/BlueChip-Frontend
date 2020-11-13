@@ -65,6 +65,7 @@ const SquarePost = ({ id, likeCount, commentCount, file }) => (
 );
 
 SquarePost.propTypes = {
+  id: PropTypes.string.isRequired,
   likeCount: PropTypes.number.isRequired,
   commentCount: PropTypes.number.isRequired,
   file: PropTypes.object.isRequired
