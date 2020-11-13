@@ -49,6 +49,8 @@ const MainText = styled.img`
   height: 75px;
   margin-left: 50px;
   margin-bottom: -20px;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default ({
