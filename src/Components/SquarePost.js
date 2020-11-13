@@ -45,10 +45,10 @@ const NumberText = styled.span`
   font-size: 16px;
 `;
 
-const SquarePost = ({ likeCount, commentCount, file }) => (
+const SquarePost = ({ id, likeCount, commentCount, file }) => (
   
   <Container bg={file.url}>
-    <ELink to={`/explorerpost`}>
+    <ELink to={`/explorerpost/${id}`}>
     <Overlay>
       <Number>
         <HeartFull />

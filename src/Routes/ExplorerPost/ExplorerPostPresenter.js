@@ -1,41 +1,11 @@
 import React from "react";
 import { Helmet } from "rl-react-helmet";
 import styled from "styled-components";
-import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/client";
-import Loader from "../Components/Loader";
-import Post from "../Components/Post"
-import Theme from "../Styles/Theme";
-
-const FEED_QUERY = gql`
-  {
-    seeFeed {
-      id
-      location
-      caption
-      user {
-        id
-        avatar
-        username
-      }
-      files {
-        id
-        url
-      }
-      likeCount
-      isLiked
-      comments {
-        id
-        text
-        user {
-          id
-          username
-        }
-      }
-      createdAt
-    }
-  }
-`;
+import Loader from "../../Components/Loader";
+import Post from "../../Components/Post"
+import Theme from "../../Styles/Theme";
+import { gql } from "apollo-boost";
 
 const Wrapper = styled.div`
   min-height: 90vh;
@@ -47,13 +17,14 @@ const Wrapper = styled.div`
 `;
 
 
-export default () => {
-    const { data, loading } = useQuery(FEED_QUERY);
+export default ({ data, loading }) => {
+
     return (
         <Wrapper>
             <Helmet>
                 <title>Feed | BlueChip</title>
             </Helmet>
+
             {loading && <Loader />}
             {!loading &&
                 data &&
