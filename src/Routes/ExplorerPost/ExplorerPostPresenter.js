@@ -27,8 +27,8 @@ export default ({ data, loading }) => {
             {loading && <Loader />}
             {!loading &&
                 data &&
-                data.seeFeed &&
-                data.seeFeed.map(post => (
+                data.seeFullPost &&
+                data.seeFullPost.map(post => (
                     <Post
                         key={post.id}
                         id={post.id}
