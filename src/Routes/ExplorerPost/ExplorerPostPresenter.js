@@ -18,7 +18,6 @@ const Wrapper = styled.div`
 
 
 export default ({ data, loading }) => {
-
     return (
         <Wrapper>
             <Helmet>
