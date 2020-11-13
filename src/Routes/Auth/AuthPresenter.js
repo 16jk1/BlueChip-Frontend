@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import Input from "../../Components/Input";
 import Button from "../../Components/Button";
+import mainText from "../../assets/image/BlueChip_text.png";
+
 const Wrapper = styled.div`
   min-height: 80vh;
   display: flex;
@@ -41,6 +43,14 @@ const Form = styled(Box)`
     }
   }
 `;
+
+const MainText = styled.img`
+  width: 100px;
+  height: 75px;
+  margin-bottom: -50px;
+  margin-left: -10px;
+`;
+
 export default ({
   action,
   username,
@@ -55,6 +65,7 @@ export default ({
     <Form>
       {action === "logIn" && (
         <>
+        <MainText src={mainText}></MainText>
         <Helmet>
           <title>Log In | BlueChip</title>
         </Helmet>
@@ -69,6 +80,7 @@ export default ({
        <Helmet>
          <title>Sign Up | BlueChip</title>
        </Helmet>
+
        <form onSubmit={onSubmit}>
          <Input placeholder={"First name"} {...firstName} />
          <Input placeholder={"Last name"} {...lastName} />
