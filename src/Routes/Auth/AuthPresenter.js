@@ -47,8 +47,7 @@ const Form = styled(Box)`
 const MainText = styled.img`
   width: 100px;
   height: 75px;
-  margin-bottom: -50px;
-  margin-left: -10px;
+
 `;
 
 export default ({
