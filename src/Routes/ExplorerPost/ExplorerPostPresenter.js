@@ -16,6 +16,12 @@ const Wrapper = styled.div`
   min-height: 80vh;
 `;
 
+const HeaderColumn = styled.div`
+  margin-top: -100px;
+  color: #999;
+  font-size: 40px;
+  margin-bottom: 50px;
+`;
 
 export default ({ data, loading }) => {
     return (
@@ -23,7 +29,9 @@ export default ({ data, loading }) => {
             <Helmet>
                 <title>Feed | BlueChip</title>
             </Helmet>
-
+            <HeaderColumn>
+              <h1/>Welcome to BlueChip!
+            </HeaderColumn>
             {loading && <Loader />}
             {!loading &&
                 data &&
