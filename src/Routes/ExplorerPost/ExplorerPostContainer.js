@@ -5,8 +5,8 @@ import { useQuery, useMutation  } from "@apollo/client";
 import ExplorerPostPresenter from "./ExplorerPostPresenter";
 
 const GET_POST = gql`
-  query seeFullPost($id: String!) {
-    seeFullPost(id: $id) {
+    query search($term: String!) {
+    searchPost(term: $term) {
       id
       location
       caption
@@ -35,7 +35,7 @@ const GET_POST = gql`
 `;
 
 
-export default withRouter(({ match: { params: { id } } }) => {
-  const { data, loading } = useQuery(GET_POST, { variables: { id } });
+export default withRouter(({ match: { params: { term } } }) => {
+  const { data, loading } = useQuery(GET_POST, { variables: { term } });
   return <ExplorerPostPresenter loading={loading} data={data} />;
 });
