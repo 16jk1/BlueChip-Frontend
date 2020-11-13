@@ -5,7 +5,7 @@ import { useQuery } from "@apollo/client";
 import Loader from "../../Components/Loader";
 import Post from "../../Components/Post"
 import Theme from "../../Styles/Theme";
-import { gql } from "apollo-boost";
+import SquarePost from "../../Components/SquarePost";
 
 const Wrapper = styled.div`
   min-height: 90vh;
@@ -37,18 +37,12 @@ const ExplorerPostPresenter = ({ data, loading }) => {
                 data &&
                 data.searchPost &&
                 data.searchPost.map(post => (
-                    <Post
-                        key={post.id}
-                        id={post.id}
-                        location={post.location}
-                        caption={post.caption}
-                        user={post.user}
-                        files={post.files}
-                        likeCount={post.likeCount}
-                        isLiked={post.isLiked}
-                        comments={post.comments}
-                        createdAt={post.createdAt}
-                    />
+                  <SquarePost
+                  caption={post.caption}
+                  likeCount={post.likeCount}
+                  commentCount={post.commentCount}
+                  file={post.files[0]}
+                />
                 ))}
         </Wrapper>
     );
