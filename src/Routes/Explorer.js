@@ -74,7 +74,7 @@ export default () => {
             <Section>
               {data.allPost.map(post => (
                 <PostCard
-                key={post.id}
+                caption={post.caption}
                 likeCount={post.likeCount}
                 commentCount={post.commentCount}
                 file={post.files[0]}

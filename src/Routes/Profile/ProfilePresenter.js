@@ -125,14 +125,14 @@ export default ({ loading, data, logOut }) => {
               </Count>
             </Counts>
             <FullName text={fullName} />
-            <Bio>{bio}</Bio>
+            <Bio>MBTI: {bio}</Bio>
           </HeaderColumn>
         </Header>
         <Posts>
           {posts &&
             posts.map(post => (
               <SquarePost
-                key={post.id}
+                caption={post.caption}
                 likeCount={post.likeCount}
                 commentCount={post.commentCount}
                 file={post.files[0]}

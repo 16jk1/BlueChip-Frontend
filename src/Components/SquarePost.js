@@ -49,6 +49,7 @@ const SquarePost = ({ caption, likeCount, commentCount, file }) => (
   
   <Container bg={file.url}>
     <ELink to={`/${caption}`}>
+      {caption}
     <Overlay>
       <Number>
         <HeartFull />
