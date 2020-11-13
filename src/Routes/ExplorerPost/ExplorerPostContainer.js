@@ -42,5 +42,6 @@ export default withRouter(({ location: { explorepost } }) => {
     variables: {
       term: decodeURI(term)
      } });
+  console.log(data)
   return <ExplorerPostPresenter loading={loading} data={data} />;
 });

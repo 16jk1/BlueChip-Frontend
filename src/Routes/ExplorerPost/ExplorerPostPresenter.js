@@ -23,7 +23,7 @@ const HeaderColumn = styled.div`
   margin-bottom: 50px;
 `;
 
-export default ({ data, loading }) => {
+const ExplorerPostPresenter = ({ data, loading }) => {
     return (
         <Wrapper>
             <Helmet>
@@ -53,3 +53,9 @@ export default ({ data, loading }) => {
         </Wrapper>
     );
 };
+
+ExplorerPostPresenter.propTypes = {
+  loading: PropTypes.bool
+};
+
+export default ExplorerPostPresenter;
