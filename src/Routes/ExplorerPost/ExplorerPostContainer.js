@@ -7,15 +7,29 @@ import ExplorerPostPresenter from "./ExplorerPostPresenter";
 const GET_POST = gql`
   query seeFullPost($id: String!) {
     seeFullPost(id: $id) {
+      id
+      location
+      caption
+      user {
         id
-        user
-        files
-        likeCount
-        isLiked
-        comments
-        createdAt
-        caption
-        location
+        avatar
+        username
+      }
+      files {
+        id
+        url
+      }
+      likeCount
+      isLiked
+      comments {
+        id
+        text
+        user {
+          id
+          username
+        }
+      }
+      createdAt
     }
   }
 `;
