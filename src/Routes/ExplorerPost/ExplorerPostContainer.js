@@ -36,6 +36,7 @@ const GET_POST = gql`
 
 
 export default withRouter(({ location: { explorepost } }) => {
+  console.log(explorepost);
   const term = explorepost.split("=")[1];
   const { data, loading } = useQuery(GET_POST, { variables: { term: decodeURI(term) } });
   return <ExplorerPostPresenter loading={loading} data={data} />;
