@@ -65,11 +65,11 @@ export default ({
     <Form>
       {action === "logIn" && (
         <>
-        <MainText src={mainText}></MainText>
         <Helmet>
           <title>Log In | BlueChip</title>
         </Helmet>
         <form onSubmit={onSubmit}>
+          <MainText src={mainText}></MainText>
           <Input placeholder={"Email"} {...email} type="email" />
           <Button text={"Log in"} />
         </form>
