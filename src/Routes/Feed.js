@@ -50,7 +50,12 @@ const Wrapper = styled.div`
 const HeaderColumn = styled.div`
   margin-top: -100px;
   color: #999;
-  font-size: 40px;
+  font-size: 35px;
+  margin-bottom: 20px;
+`;
+const InstructionColumn = styled.div`
+  color: #0;
+  font-size: 20px;
   margin-bottom: 50px;
 `;
 
@@ -64,6 +69,11 @@ export default () => {
             <HeaderColumn>
               <h1/>Welcome to BlueChip!
             </HeaderColumn>
+            <InstructionColumn>
+              <h3/>1. 검색창에 admin을 친다
+              <h3/>2. admin을 팔로우 한다
+              <h3/>admin이 공유한 게시물들을 확인 할 수 있다
+            </InstructionColumn>
             {loading && <Loader />}
             {!loading &&
                 data &&

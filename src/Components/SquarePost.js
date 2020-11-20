@@ -45,10 +45,10 @@ const NumberText = styled.span`
   font-size: 16px;
 `;
 
-const SquarePost = ({ caption, likeCount, commentCount, file }) => (
+const SquarePost = ({ id, likeCount, commentCount, file }) => (
   
   <Container bg={file.url}>
-    <ELink to={`/${caption}`}>
+    <ELink to={`/${id}`}>
     <Overlay>
       <Number>
         <HeartFull />
@@ -65,7 +65,7 @@ const SquarePost = ({ caption, likeCount, commentCount, file }) => (
 );
 
 SquarePost.propTypes = {
-  caption: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   likeCount: PropTypes.number.isRequired,
   commentCount: PropTypes.number.isRequired,
   file: PropTypes.object.isRequired

@@ -52,7 +52,7 @@ const File = styled.div`
   background-size: cover;
   background-position: center;
   opacity: ${props => (props.showing ? 1 : 0)};
-  transition: opacity 0.5s linear;
+  transition: opacity 1s linear;
 `;
 
 const Button = styled.span`

@@ -48,8 +48,5 @@ const ExplorerPostPresenter = ({ data, loading }) => {
     );
 };
 
-ExplorerPostPresenter.propTypes = {
-  loading: PropTypes.bool
-};
 
 export default ExplorerPostPresenter;
