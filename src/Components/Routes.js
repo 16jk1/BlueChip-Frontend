@@ -7,7 +7,7 @@ import Explore from "../Routes/Explorer";
 import Search from "../Routes/Search";
 import Profile from "../Routes/Profile";
 import ExplorerPost from "../Routes/ExplorerPost";
-import mbti from "../Routes/mbti/mbti";
+import Mbti from "../Routes/mbti/mbti";
 
 const LoggedInRoutes = () => (
   <Switch>
@@ -15,7 +15,7 @@ const LoggedInRoutes = () => (
     <Route path="/explore" component={Explore} />
     <Route path="/search" component={Search} />
     <Route path="/:username" component={Profile} />
-    <Route path="/mbti" component={mbti} />
+    <Route exact path="/mbti" component={Mbti} />
     <Route path="/explorepost" component={ExplorerPost} />
     <Redirect from="*" to="/" />
   </Switch>
