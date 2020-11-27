@@ -15,7 +15,7 @@ const LoggedInRoutes = () => (
     <Route path="/explore" component={Explore} />
     <Route path="/search" component={Search} />
     <Route path="/:username" component={Profile} />
-    <Route exact path="/mbti" component={Mbti} />
+    <Route path="/mbti" component={Mbti} />
     <Route path="/explorepost" component={ExplorerPost} />
     <Redirect from="*" to="/" />
   </Switch>
