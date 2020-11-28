@@ -12,10 +12,10 @@ import Mbti from "../Routes/mbti";
 const LoggedInRoutes = () => (
   <Switch>
     <Route exact path="/" component={Feed} />
-    <Route path="/explore" component={Explore} />
+    <Route path="/explore" component={Mbti} />
     <Route path="/search" component={Search} />
     <Route path="/:username" component={Profile} />
-    <Route path="/Mbti" component={Mbti} />
+    <Route path="/mbti" component={Explore} />
     <Route path="/explorepost" component={ExplorerPost} />
     <Redirect from="*" to="/" />
   </Switch>
