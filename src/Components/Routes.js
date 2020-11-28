@@ -7,7 +7,7 @@ import Explore from "../Routes/Explorer";
 import Search from "../Routes/Search";
 import Profile from "../Routes/Profile";
 import ExplorerPost from "../Routes/ExplorerPost";
-import Mbti from "../Routes/mbti/Mbti";
+import Mbti from "../Routes/mbti";
 
 const LoggedInRoutes = () => (
   <Switch>
