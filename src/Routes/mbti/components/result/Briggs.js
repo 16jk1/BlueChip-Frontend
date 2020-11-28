@@ -332,7 +332,6 @@ class Briggs extends Component {
             PLDT
           </li>
         </ul>
-        <div class="addthis_inline_share_toolbox_qc3e"></div>
       </Wrapper>
     )
   }

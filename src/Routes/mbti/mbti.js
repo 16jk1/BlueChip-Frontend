@@ -5,17 +5,8 @@ import Question from './components/Question'
 import styled from "styled-components";
 import Theme from "../../Styles/Theme";
 
-const Wrapper = styled.div`
-  min-height: 90vh;
-  ${Theme.router};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 80vh;
-`;
 
-
-class mbti extends React.Component {
+class Mbti extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -60,4 +51,4 @@ class mbti extends React.Component {
   }
 }
 
-export default mbti
+export default Mbti

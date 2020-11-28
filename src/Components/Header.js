@@ -107,7 +107,7 @@ export default withRouter(({ history }) => {
           <HeaderLink to="/explore">
             <MainLogo src={mainLogo}></MainLogo>
           </HeaderLink>
-          <HeaderLink to="/mbti">
+          <HeaderLink to="/Mbti">
             <HeartEmpty />
           </HeaderLink>
           {!(data !== undefined && data.me)? (
